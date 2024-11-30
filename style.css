@@ -1,0 +1,789 @@
+/* Basic Reset */
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #e3f2fd, #ede7f6);
+    color: #333;
+    display: flex;
+  }
+  
+  /* Sidebar */
+.sidebar {
+    width: 200px; /* Adjust this value as needed */
+    background: white;
+    color: gray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    border-right: 1px solid #ddd; /* Optional, for visual separation */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+.sidebar-brand-icon img{
+    width: 170px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    object-fit: cover;
+    top: 0;
+  }
+  
+  
+  hr {
+    width: 100%;
+    border-top: 1px solid #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .nav {
+    width: 100%;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .nav li {
+    margin: 25px 0;
+  }
+  .nav a,
+  .nav button {
+    text-decoration: none;
+    color:#808080;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a.active,
+  .nav a:hover {
+    color: #2c3e50;
+  }
+  
+  .sidebar a:hover i {
+    color: #2c3e50;
+     
+  }
+  
+  .nav a, #logout-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #808080;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav a:hover {
+color: black;
+  }
+  
+  .nav i {
+    margin-right: 10px;
+  }
+  
+  #logout-btn {
+    color: #940000;
+    font-weight: bold;
+    cursor: pointer;
+    justify-content: center;
+  }
+  
+  #logout-btn:hover {
+    color: #e74c3c;
+  }
+  
+.header, .footer {
+    display: flex;
+    background-color: #FBFBFB;
+    color: black;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 80.5%; /* Adjusted for sidebar width */
+    left: 240.3px; /* Adjusted to start after the sidebar */
+    z-index: 1000;
+  }
+  .header {
+    top: 0;
+    padding: 3px 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: #FBFBFB;
+    color: black;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 80.5%; /* Adjusted for sidebar width */
+    left: 240.3px; /* Adjusted to start after the sidebar */
+    bottom: 0;
+    padding: 2px 20px;
+    text-align: center; /* Ensure text alignment */
+  }
+  
+  .footer p {
+    margin: 2; /* Remove default margin to avoid offset */
+    font-size: 0.9rem;
+  }
+  
+  /* Greeting Message */
+  /* Default styling for the greeting */
+/* General greeting styling */
+.greeting {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Styling for the day icon */
+.greeting .icon.day {
+    color: yellow; /* Day color */
+    margin-right: 10px;
+}
+
+/* Styling for the night icon */
+.greeting .icon.night {
+    color: black; /* Night color */
+    margin-right: 10px;
+
+}
+
+/* Styling for the text */
+.greeting .text {
+    color: inherit; /* Ensures text color matches parent */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 18px; /* Slightly smaller font size for tablets */
+        flex-direction: column; /* Stack icon and text vertically */
+        align-items: center;
+        text-align: center; /* Center the text */
+    }
+
+    .greeting .icon {
+        margin-bottom: 5px; /* Space between the icon and the text */
+    }
+}
+
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 16px; /* Even smaller font size for small screens */
+    }
+
+    .greeting .icon {
+        margin-bottom: 5px; /* Space between the icon and the text */
+    }
+}  
+  /* Theme Toggle */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+  }
+  
+  .slider::before {
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(14px);
+  }
+  
+  /* Profile Picture */
+  #header-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ecf0f1;
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .header {
+      padding: 8px 15px;
+      width: calc(100% - 200px); /* Adjust to full screen minus the sidebar */
+    }
+  
+    #greeting {
+      font-size: 1rem;
+    }
+  
+    #header-profile img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .switch {
+      width: 30px;
+      height: 18px;
+    }
+  
+    .slider::before {
+      height: 12px;
+      width: 12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+      width: calc(100% - 240px); /* Adjust for the sidebar width */
+      left: 240px;
+    }
+  
+    #greeting {
+      margin-bottom: 10px;
+    }
+  
+    #header-profile {
+      margin-top: 10px;
+    }
+  
+    .switch {
+      width: 28px;
+      height: 16px;
+    }
+  
+    .slider::before {
+      height: 10px;
+      width: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header {
+      padding: 8px 10px;
+      width: 100%; /* Full width for smaller screens */
+      left: 0; /* Start at the very left */
+    }
+  
+    #greeting {
+      font-size: 0.9rem;
+    }
+  
+    #header-profile img {
+      width: 30px;
+      height: 30px;
+    }
+  
+    .switch {
+      width: 26px;
+      height: 14px;
+    }
+  
+    .slider::before {
+      height: 8px;
+      width: 8px;
+    }
+  }
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 10px 15px;
+    }
+  
+    .footer p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer {
+      padding: 8px 10px;
+    }
+  
+    .footer p {
+      font-size: 0.7rem;
+    }
+  
+  }
+  
+  
+.content_1 {
+    margin-left: 245px;
+    padding: 20px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Adds space between the sections */
+}
+.content_2 {
+    margin-left: 270px;
+    margin-top: 50px;
+}
+.content h1 {
+    margin-left: 640px;
+    margin-top: 80px;
+}
+
+/* Classes and Tasks Section Styling */
+#classes-section,
+#tasks-section {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    padding: 15px; /* Internal padding */
+    width: 90%; /* Adjust width for both sections to fit in one row */
+    display: flex;
+    flex-direction: column; /* Ensure the content stacks vertically */
+    gap: 10px; /* Space between heading and table */
+}
+
+/* Header Styling */
+h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 1.8rem; /* Larger font size for better readability */
+    text-align: center; /* Center the heading for better alignment */
+}
+
+/* Table Styling */
+table {
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 10px;
+    width: 100%; /* Make tables stretch to full width */
+}
+
+/* Table Header and Cells */
+table th,
+table td {
+    padding: 12px; /* Increased padding for better spacing */
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 1rem; /* Standard font size */
+}
+
+/* Header Row Styling */
+table th {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+/* Last Row Styling (Removing Bottom Border) */
+table tr:last-child td {
+    border-bottom: none;
+}
+
+/* No Data Message Styling */
+#classes-no-data,
+#tasks-no-data {
+    color: #2c3e50;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(249, 194, 194, 0.8); /* Slightly transparent red background */
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold; /* Added emphasis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover Effect for Table Rows */
+table tr:hover {
+    background-color: #f5f5f5; /* Light gray on hover */
+}
+
+/* Zebra-Striping for Rows */
+table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternating row colors */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content_1 {
+        margin-left: 0;
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        gap: 20px; /* Adjust spacing */
+    }
+
+    .content h1 {
+        margin-left: 0;
+        text-align: center; /* Center heading */
+    }
+
+    #classes-section,
+    #tasks-section {
+        width: 100%; /* Full-width sections on smaller screens */
+    }
+
+    table th,
+    table td {
+        padding: 8px; /* Adjusted padding */
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5rem; /* Adjusted for small devices */
+    }
+
+    table th,
+    table td {
+        font-size: 0.8rem; /* Smaller font for mobile */
+    }
+
+    #classes-section,
+    #tasks-section {
+        padding: 10px; /* Compact padding for mobile */
+    }
+}
+
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 200px;
+      padding: 15px;
+    }
+  
+    #sidebar-logo {
+      width: 80px;
+    }
+  
+    .header {
+      margin-left: 200px;
+    }
+  
+    .content {
+      margin-left: 200px;
+      padding: 15px;
+    }
+  
+    .nav li {
+      margin: 5px 0;
+    }
+  
+    .nav a, #logout-btn {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    #header-profile img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .sidebar {
+      width: 150px;
+      padding: 10px;
+    }
+  
+    .header {
+      margin-left: 150px;
+    }
+  
+    .content {
+      margin-left: 150px;
+      padding: 10px;
+    }
+  
+    .nav li {
+      margin: 3px 0;
+    }
+  
+    .nav a, #logout-btn {
+      padding: 6px;
+      font-size: 12px;
+    }
+  
+    #header-profile img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .content_2 {
+    margin-left: 270px;
+    margin-top: 50px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin: 0px 0;
+  }
+  
+  .controls button {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .controls button:hover {
+    background-color: #16a085;
+  }
+  
+  /* Container to handle scroll for long tables */
+  .content_tasks {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: auto; /* Adds scroll when content is wider */
+    margin-left: 35px;
+
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: fixed; /* Ensures table expands with content */
+  }
+  
+  thead {
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden; /* Hides overflow content */
+    text-overflow: ellipsis; /* Shows "..." for overflow */
+  }
+  
+  th {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  td.actions {
+    text-align: center;
+  }
+  
+  td button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  td button.edit-btn {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  td button.edit-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  td button.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  td button.delete-btn:hover {
+    background-color: #c0392b;
+  }
+  
+  /* No Tasks Message */
+  #task-no-data {
+    color: #2c3e50;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(249, 194, 194, 0.8);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-content h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .modal-content form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+    color: #2c3e50;
+  }
+  
+  .modal-content form input,
+  .modal-content form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .modal-content form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-content form button:hover {
+    background-color: #16a085;
+  }
+  
+  .modal-content form #close-modal {
+    background-color: #e74c3c;
+  }
+  
+  .modal-content form #close-modal:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    table {
+      font-size: 0.9rem;
+    }
+  
+    th, td {
+      padding: 10px;
+    }
+  }
+ 
+  /* Burger Button */
+#burger-menu {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100; /* Ensure it's on top of other elements */
+}
+
+#burger-menu i {
+  color: #2c3e50;
+}
+
+/* Show burger button on smaller screens */
+@media (max-width: 768px) {
+  #burger-menu {
+      display: block; /* Show burger button on mobile */
+  }
+
+  .sidebar {
+      position: absolute;
+      left: -200px; /* Initially hidden */
+      transition: left 0.3s ease; /* Smooth transition */
+  }
+
+  .sidebar.open {
+      left: 0; /* Slide in when 'open' class is added */
+  }
+
+  .content {
+      margin-left: 0; /* Adjust content when sidebar is hidden */
+  }
+}
+
+  

@@ -1,0 +1,305 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li, table, th, td, input, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ font-family: 'Roboto', sans-serif;
+}
+
+/* Main Layout */
+body {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  background: linear-gradient(to right, #e3f2fd, #ede7f6);
+  color: #000;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 18%;
+  background-color: white;
+  color: gray;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Ensure proper viewport height */
+  box-sizing: border-box; /* Include padding in the element's total size */
+}
+
+.hr {
+  color: gray;
+}
+
+#sidebar-logo {
+  width: 80%;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+nav ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+nav ul li {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.nav a,
+  .nav button {
+    text-decoration: none;
+    color: gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a.active,
+  .nav a:hover {
+    color: black;
+  }
+  
+  .sidebar a:hover i,
+  .sidebar button:hover i {
+    color: black; /* Change icon color on hover */
+  }
+.sidebar i {
+  margin-right: 10px; /* Adds space between icon and text */
+  color: gray; /* Icon color */
+}
+
+.sidebar a:hover i,
+.sidebar button:hover i {
+  color: black; /* Change icon color on hover */
+}
+
+
+/* Content Area */
+.content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#header-profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Theme Toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 50px;
+  transition: background-color 0.4s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: transform 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #1f3a93;
+}
+
+input:checked + .slider::before {
+  transform: translateX(14px);
+}
+
+/* Form Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #2c3e50;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #34495e;
+}
+
+#logout-btn {
+  background-color: #dc3545;
+}
+
+#logout-btn:hover {
+  background-color: #c82333;
+}
+
+#save-profile-btn {
+  background-color: #28a745;
+}
+
+#save-profile-btn:hover {
+  background-color: #218838;
+}
+
+/* Profile and Settings */
+.profile-container,
+.settings-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h2,
+.settings-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.profile-picture,
+.settings-profile-picture {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px auto;
+  object-fit: cover;
+}
+
+/* Greeting */
+.greeting {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Dark and Light Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+  .content {
+    padding: 10px;
+  }
+
+  .profile-picture,
+  .settings-profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+/* Styling for profile picture */
+#sidebar-profile-picture,
+#settings-profile-picture {
+    border: 2px solid #1f3a93; /* Blue border to indicate active state */
+    transition: border-color 0.3s;
+}
+
+/* Add a hover effect */
+#sidebar-profile-picture:hover,
+#settings-profile-picture:hover {
+    border-color: #34495e; /* Darker border on hover */
+}

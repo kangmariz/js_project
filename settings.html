@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
+      <div class="sidebar-brand-icon">
+          <img src="Untitled_design-removebg-preview.png"  alt=" Logo">
+      </div>
+  </a>
+  <hr>
+  
+    <nav class="nav">
+      <ul>
+        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="classes.html"><i class="fas fa-chalkboard-teacher"></i> Classes</a></li>
+        <li><a href="activity.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+        <li><a href="settings.html"><i class="fas fa-user"></i> Profile</a></li>
+        <li><button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <!-- Content -->
+  <div class="content">
+    <!-- Header Section -->
+    <div class="header">
+      <!-- Greeting Message -->
+      <div id="greeting"></div>
+      <!-- Profile Picture and Settings Button -->
+      <div id="header-profile">
+        <a href="settings.html"><img id="header-profile-picture" src="default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Profile Picture"></a>
+      </div>
+    </div>
+        <!-- Main Content -->
+        <main id="content">
+            <!-- Edit Profile Section -->
+            <section id="editProfile">
+                <h2>Edit Profile Picture</h2>
+                <div class="profile-picture-container">
+                    <img id="settings-profile-picture"
+                         src="default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"
+                         alt="Profile Picture Preview" class="profile-picture">
+                </div>
+                <div class="upload-section">
+                    <label for="profilePictureInput" class="upload-label">Choose a New Picture:</label>
+                    <input type="file" id="profilePictureInput" accept="image/*" class="upload-input">
+                    <button id="updateProfilePicture" class="btn">Update Picture</button>
+                </div>
+            </section>
+            <!-- Edit Account Settings Section -->
+            <section id="editAccount">
+                <h2>Edit Account Details</h2>
+                <form id="account-info-form" class="settings-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study Planner - Tasks</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+    <script defer src="tasks.js"></script>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <a
+        class="sidebar-brand d-flex align-items-center justify-content-center"
+        href="home.html"
+      >
+        <div class="sidebar-brand-icon">
+          <img src="Untitled_design-removebg-preview.png" alt=" Logo" />
+        </div>
+      </a>
+      <hr />
+
+      <nav class="nav">
+        <ul>
+          <li>
+            <a href="home.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="classes.html"
+              ><i class="fas fa-chalkboard-teacher"></i> Classes</a
+            >
+          </li>
+          <li>
+            <a href="activity.html" class="active"
+              ><i class="fas fa-tasks"></i> Tasks</a
+            >
+          </li>
+          <li>
+            <button id="logout-btn">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="content_2">
+      <h1>Tasks</h1>
+      <div class="header">
+        <div id="greeting">Welcome, User!</div>
+        <div id="header-profile">
+          <a href="settings.html"
+            ><img
+              id="header-profile-picture"
+              src="default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"
+              alt="Profile Picture"
+          /></a>
+        </div>
+      </div>
+      <div class="content_tasks">
+        <div class="controls">
+          <button id="add-task-btn">
+            <i class="fas fa-plus"></i> Add Task
+          </button>
+          <button id="delete-all-btn">
+            <i class="fas fa-trash-alt"></i> Delete All
+          </button>
+        </div>
+
+        <div id="homework-form-modal" class="modal">
+          <div class="modal-content">
+            <h2 id="task-form-title">Add New Task</h2>
+            <form id="homework-form">
+              <label for="task-name">Task Name:</label>
+              <input type="text" id="task-name" required />
+
+              <label for="task-type">Task Type:</label>
+              <select id="task-type">
+                <option value="Activity">Activity</option>
+                <option value="Assignment">Assignment</option>
+                <option value="Project">Project</option>
+              </select>
+              <br />
+
+              <label for="subject">Course:</label>
+              <select id="subject"></select>
+              <br />
+
+              <label for="deadline">Deadline/Time:</label>
+              <input type="datetime-local" id="deadline" required />
+              <br />
+
+              <button type="submit" id="form-submit-btn">Add Task</button>
+              <button type="button" id="close-modal">Cancel</button>
+            </form>
+          </div>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Course</th>
+              <th>Deadline / Time</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tasks-list"></tbody>
+        </table>
+        <div id="task-no-data" style="display: none">No tasks available.</div>
+      </div>
+    </div>
+    <div class="footer">
+      <center>
+        <p>&copy; 2024 Rica Mariz A. Gudito. All rights reserved.</p>
+      </center>
+    </div>
+  </body>
+</html>

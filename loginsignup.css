@@ -1,0 +1,122 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #ede7f6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  max-width: 1000px;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.login-container, .signup-container {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-box {
+  text-align: center;
+  width: 80%;
+}
+
+.form-box h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.form-box p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+form button {
+  padding: 12px;
+  background: #673ab7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #512da8;
+}
+
+.toggle-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.toggle-link {
+  color: #673ab7;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+  color: #512da8;
+}
+
+.info-container {
+  flex: 1;
+  background: #d5c4ef;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 40px;
+}
+
+.info-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-box img {
+  width: 100%; 
+  max-width: none;
+  height: auto;
+  object-fit: contain; 
+}

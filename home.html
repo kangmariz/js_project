@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Planner - Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="classes.js"></script>
+  <script defer src="tasks.js"></script>
+
+  
+
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
+      <div class="sidebar-brand-icon">
+          <img src="Untitled_design-removebg-preview.png"  alt=" Logo">
+      </div>
+  </a>
+  <hr>
+  
+    <nav class="nav">
+      <ul>
+        <li><a href="home.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="classes.html"><i class="fas fa-chalkboard-teacher"></i> Classes</a></li>
+        <li><a href="activity.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+        <li><button id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+      </ul>
+    </nav>
+
+     <!-- Burger Button -->
+  <button id="burger-menu" class="burger-menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  </div>
+  
+
+  <!-- Content -->
+  <div class="content">
+  <h1>Welcome to Study Planner!</h1>
+    <!-- Header Section -->
+    <div class="header">
+      <!-- Greeting Message -->
+      <div id="greeting"></div>
+      <!-- Profile Picture and Settings Button -->
+      <div id="header-profile">
+        <a href="settings.html"><img id="header-profile-picture" src="default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Profile Picture"></a>
+      </div>
+    </div>
+    
+    <div class="content_1">
+    <div id="classes-section">
+        <h2>My Classes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Course No.</th>
+              <th>Description</th>
+              <th>Start Date/Time</th>
+              <th>End Date/Time</th>
+              <th>Teacher</th>
+            </tr>
+          </thead>
+          <tbody id="classes-list"></tbody>
+        </table>
+        <div id="classes-no-data" style="display: none;">No classes available.</div>
+      </div>
+
+      <div id="tasks-section">
+        <h2>My Tasks</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Course</th>
+              <th>Deadline / Time</th>
+            </tr>
+          </thead>
+          <tbody id="tasks-list"></tbody>
+        </table>
+        <div id="tasks-no-data" style="display: none;">No classes available.</div>
+  </div>
+    </div> 
+    <div class="footer">
+      <center>
+      <p>&copy; 2024 Rica Mariz A. Gudito. All rights reserved.</p>
+      </center>
+    </div> 
+    </div>
+
+  
+  </div>
+
+  
+<script>
+  // Elements and variables for Classes
+const classesList = document.getElementById('classes-list');
+const classesNoData = document.getElementById('classes-no-data');
+
+// Retrieve classes from localStorage
+let classes = JSON.parse(localStorage.getItem('classes')) || [];
+
+// Function to render classes in the table
+function renderClasses() {
+  classesList.innerHTML = ''; // Clear existing rows
+  if (classes.length === 0) {
+    classesNoData.style.display = 'block';
+  } else {
+    classesNoData.style.display = 'none';
+    classes.forEach((cls) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${cls.courseNo}</td>
+        <td>${cls.description}</td>
+        <td>${cls.scheduleStart}</td>
+        <td>${cls.scheduleEnd}</td>
+        <td>${cls.teacher}</td>
+      `;
+      classesList.appendChild(row);
+    });
+  }
+}
+
+// Elements and variables for Tasks
+const tasksList = document.getElementById('tasks-list');
+const tasksNoData = document.getElementById('tasks-no-data');
+
+// Retrieve tasks from localStorage
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+// Function to render tasks in the table
+function renderTasks() {
+  tasksList.innerHTML = ''; // Clear existing rows
+  if (tasks.length === 0) {
+    tasksNoData.style.display = 'block';
+  } else {
+    tasksNoData.style.display = 'none';
+    tasks.forEach((task, index) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${task.name}</td>
+            <td>${task.type}</td>
+            <td>${task.course}</td>
+            <td>${task.deadline}</td>
+      `;
+      tasksList.appendChild(row);
+    });
+  }
+}
+
+
+// Initial render on page load
+window.onload = () => {
+  renderClasses();
+  renderTasks();
+};
+
+</script> 
+</body>
+</html>
